@@ -8,96 +8,48 @@
 	<link rel="image_src" href="/images/notify_better_image.png" />
 
 
-	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
+	<link rel="shortcut icon" id="favicon" href="favicon.png">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jquery.onepage-scroll.min.js"></script>
-  <link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+
+  <link rel="stylesheet" href="css/responsivemobilemenu.css" type="text/css"/>
+  <script type="text/javascript" src="js/responsivemobilemenu.js"></script>
+
   <link href='css/screen.css' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <style> </style>
-	<script>
-	  $(document).ready(function(){
-      $(".main").onepage_scroll({
-        sectionContainer: "section",
-        responsiveFallback: false,
-        loop: true
+	<script type="text/javascript">
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        sectionsColor: ['#000100', '#e4e4e4', '#e4e4e4'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4rdPage'],
+        css3: true,
+        menu: '#menu',
+        loopTop: true,
+        loopBottom: true,
+
+        afterLoad: function(anchorLink, index){
+          //using index
+          if(index != '1'){
+            $("#header").removeClass("intro");
+          }
+          //using index
+          if(index == '1'){
+            $("#header").addClass("intro");
+          }
+        }
       });
-		});
-		
-	</script>
+    });
+  </script>
 </head>
 <body>
-  <div class="wrapper">
-	  <div class="main">
-
-      <!--****************************
-        SECCION 1
-      ********************************-->
-	    
-      <section class="page1" name="home">
-        <div class="page_container">
-          <div class="bat">
-            <img src="images/fig1.png" align="murcielago">
-          </div>
-          <div class="papel-picado">
-            <img src="images/papel.png" align="papel picdo">
-          </div>
-          <div class="calaverita">
-            <img src="images/calaverita.png" alt="calaverita">
-          </div>
-  	    </div>
-        <div class="date">28  y 29 de octubre 2015</div>
-      </section>
-
-      <!--****************************
-        SECCION 2
-      ********************************-->
-	    
-	    <section class="page2" name="tickets">
-        <div class="section-back">
-          <div class="page_container">
-            <div class="img-right">
-              <img src="images/ticket.png" alt="tickets">
-            </div>
-            <div class="info_container">
-              <ul>
-                <li><span class="vineta one"></span><span class="price">150 MXN  -</span>  <span>Se regresan si no quiere playera.</span></li>
-                <li><span class="vineta two"></span><span class="price">150 MXN  -</span> <span>Incluye playera.</span></li>
-                <li><span class="vineta three"></span><span class="price">350 MXN  -</span>  <span>Incluye playera + comida.</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer-info">
-              <div class="info-container">
-                <img src="images/location-icon.png" alt="location">
-                <div class="place">Torre de Ingeniría UNAM</div>
-                <div class="direction">Av. Universidad 3000 Circuito Exterior S/N Delegación Coyoacán, C.P. 04510. Ciudad Universitaria, D.F.</div>
-              </div>
-            </div>
-        </div>
-      </section>
-	    
-	    <!--****************************
-        SECCION 3
-      ********************************-->
-      
-      <section class="page3">
-        <div class="page_container">
-          <div class="img-right">
-            
-          </div>
-          <div class="info_container">
-            
-          </div>
-        </div>
-      </section>
-
-
-    </div>
-    <div class="back">
-      <div id="header">
+  <div class="back">
+      <div id="header" class="intro">
         <div class="brand">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            width="350px" height="150px" viewBox="0 0 350 150" enable-background="new 0 0 350 150" xml:space="preserve">
@@ -122,29 +74,44 @@
             c4.8,0,8.2,2.3,10.3,5.4l-2.8,1.6c-1.6-2.3-4.4-4-7.5-4c-6,0-10.5,4.5-10.5,11.1c0,6.5,4.5,11.1,10.5,11.1c3.1,0,6-1.7,7.5-4
             l2.9,1.6c-2.3,3.1-5.6,5.4-10.4,5.4C239.3,101.5,233.1,95.8,233.1,87.4z M270.5,101V73.7h3.4V101H270.5z M295.6,101V76.8h-8.6v-3
             h20.7v3H299V101H295.6z M328.7,101V89.5l-10.8-15.7h4l8.5,12.7l8.5-12.7h4L332,89.5V101H328.7z"/>
-          <polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="8.2,119 25.7,132 35.7,119 51.3,132 
-            61.7,119 77.3,132 85.7,119 103.3,132.7 110.7,119 127.3,132 137.7,119 153.7,132 162,119 178.3,132 187.3,120.3 203.7,132 
+          <polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="8.2,119 25.7,132 35.7,119 51.3,132
+            61.7,119 77.3,132 85.7,119 103.3,132.7 110.7,119 127.3,132 137.7,119 153.7,132 162,119 178.3,132 187.3,120.3 203.7,132
             212.3,119 229.7,132 238.7,119 255.3,132 263,119 280,131.7 287.7,119 305.7,133 315.7,121.3 329.3,132.3 342.1,119   "/>
-          <polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="10.2,132 27.7,145 37.7,132 53.3,145 
-            63.7,132 79.3,145 87.7,132 105.3,145.7 112.7,132 129.3,145 139.7,132 155.7,145 164,132 180.3,145 189.3,133.3 205.7,145 
+          <polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="10.2,132 27.7,145 37.7,132 53.3,145
+            63.7,132 79.3,145 87.7,132 105.3,145.7 112.7,132 129.3,145 139.7,132 155.7,145 164,132 180.3,145 189.3,133.3 205.7,145
             214.3,132 231.7,145 240.7,132 257.3,145 265,132 282,144.7 289.7,132 307.7,146 317.7,134.3 331.3,145.3 344.1,132   "/>
         </g>
         </svg>
         </div>
+        <div class="mobile-nav">
+          <div class="rmm" data-menu-style = "minimal">
+            <ul>
+              <li data-menuanchor="secondPage">
+                <a href="#secondPage">Tickets</a>
+              </li>
+              <li data-menuanchor="3rdPage">
+                <a href="#3rdPage">Sponsors Packages</a>
+              </li>
+              <li data-menuanchor="4rdPage">
+                <a href="#4rdPage">Speakers</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div class="navigation">
-          <ul class="">
-            <li class="tickets">
-              <a href="#tickets">Tickets</a>
+          <ul id="menu">
+            <li data-menuanchor="secondPage">
+              <a href="#secondPage">Tickets</a>
             </li>
-            <li class="sponsors">
-              <a href="#2">Sponsors Packages</a>
+            <li data-menuanchor="3rdPage">
+              <a href="#3rdPage">Sponsors Packages</a>
             </li>
-            <li class="speakers">
-              <a href="#3">Speakers</a>
+            <li data-menuanchor="4rdPage">
+              <a href="#4rdPage">Speakers</a>
             </li>
             <li class="share">Share</li>
             <li class="facebok social">
-              <a href="#">
+              <a href="https://www.facebook.com/DrupalCampMx">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
                 <path d="M223.2,71.2c16.1-15.3,38.9-20.5,60.5-21.1c22.8-0.2,45.6-0.1,68.4-0.1c0.1,24.1,0.1,48.1,0,72.2
@@ -156,7 +123,7 @@
               </a>
             </li>
             <li class="twitter social">
-              <a href="#">
+              <a href="https://twitter.com/DrupalCampMx">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="1230px" height="1000px" viewBox="0 0 1230 1000" enable-background="new 0 0 1230 1000" xml:space="preserve">
                 <path d="M0,887c20,2,40,3,60,3c117.3,0,222-36,314-108c-54.7-0.7-103.7-17.3-147-50s-73-74.3-89-125c13.3,2.7,29,4,47,4
@@ -166,11 +133,184 @@
                   c48.7-6,96.7-19.3,144-40c-32,50-73.7,93.7-125,131v33c0,67.3-9.8,134.8-29.5,202.5s-49.7,132.3-90,194C945.2,740.2,897,795,841,843
                   s-123.2,86.2-201.5,114.5S477,1000,387,1000C247.7,1000,118.7,962.3,0,887z"/>
                 </svg>
-              </li>
               </a>
+            </li>
           </ul>
+        </div>
+      </div>
+    </div>
+  <div id="fullpage">
+	  <div class="main">
+
+      <!--****************************
+        SECCION 1
+      ********************************-->
+
+      <div class="section" name="home">
+        <div class="page_container page1">
+          <div class="bat">
+            <img src="images/fig1.png" align="murcielago">
+          </div>
+          <div class="papel-picado">
+            <img src="images/papel.png" align="papel picdo">
+          </div>
+          <div class="calaverita">
+            <img src="images/calaverita.png" alt="calaverita">
+          </div>
+  	    </div>
+        <div class="date">del 5 al 7 de Noviembre 2015</div>
+      </div>
+
+      <!--****************************
+        SECCION 2
+      ********************************-->
+
+	    <div class="section" id="page2" name="tickets">
+        <div class="section-back">
+          <div class="page_container">
+            <div class="img-right">
+              <img src="images/ticket.png" alt="tickets">
+            </div>
+            <div class="info_container">
+              <ul>
+                <li>
+									<span class="vineta one"></span><span class="price">200 MXN  -</span>
+									<span>Precio para estudiantes con credencial vigente.</span>
+								</li>
+                <li><span class="vineta two"></span>
+									<span class="price">500 MXN  -</span>
+									<span>Publico en general.</span>
+								</li>
+                <li><span class="vineta three"></span>
+									<span class="price">500 MXN  -</span>
+									<span>Paquete de comida por los tres días.</span>
+								</li>
+              </ul>
+            </div>
+            <div class="footer-info">
+              <div class="info-container">
+                <img src="images/location-icon.png" alt="location">
+                <div class="place">Torre de Ingeniría UNAM</div>
+                <div class="direction">Av. Universidad 3000 Circuito Exterior S/N Delegación Coyoacán, C.P. 04510. Ciudad Universitaria, D.F.</div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+	    <!--****************************
+        SECCION 3
+      ********************************-->
+
+      <div class="section" id="page3" name="Sponsors Packages">
+        <div class="page_container">
+
+          <div class="slide">
+            <div class="title">
+              <img src="images/diamon-title.png" alt="DIAMON $3,000usd" class="sponsor-title">
+            </div>
+            <div class="img-right">
+              <img src="images/sponsors_diamon.png" alt="diamon">
+            </div>
+            <div class="info_container">
+              <ul>
+                <li><span class="vineta one"></span><span class="price">Tu marca en el sitio web</span>  <span>de  DrupalCamp Mexico City</span></li>
+                <li><span class="vineta one"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
+                <li><span class="vineta one"></span><span class="price">Oportunidad de nombrar uno de los</span>  <span>espacios con tu marca</span></li>
+                <li><span class="vineta one"></span><span>Social Media </span>  <span class="price">(5 menciones)</span></li>
+                <li><span class="vineta one"></span><span class="price">2 boletos</span>  <span>para la cena de negocios</span></li>
+                <li><span class="vineta one"></span><span class="price">Presencia en la fiesta</span></li>
+                <li><span class="vineta one"></span><span class="price">Tu logo en la pantalla</span>  <span>de presentación</span></li>
+                <li><span class="vineta one"></span><span class="price">Oportunidades para</span>  <span>dar una charla</span></li>
+                <li><span class="vineta one"></span><span class="price">Logo prominente en los</span>  <span>anuncios de la sede</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="title">
+              <img src="images/platinum-title.png" alt="PLATINUM $2,500usd" class="sponsor-title">
+            </div>
+            <div class="img-right">
+              <img src="images/sponsors_platinum.png" alt="platinum">
+            </div>
+            <div class="info_container">
+              <ul>
+                <li><span class="vineta two"></span><span class="price">Tu marca en el sitio web</span>  <span>de  DrupalCamp Mexico City</span></li>
+                <li><span class="vineta two"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
+                <li><span class="vineta two"></span><span>Social Media </span>  <span class="price">(3 menciones)</span></li>
+                <li><span class="vineta two"></span><span class="price">1 boleto</span>  <span>para la cena de negocios</span></li>
+                <li><span class="vineta two"></span><span class="price">Presencia en la fiesta</span></li>
+                <li><span class="vineta two"></span><span class="price">Tu logo en la pantalla</span>  <span>de presentación</span></li>
+                <li><span class="vineta two"></span><span class="price">Oportunidades</span>  <span>dar una charla</span></li>
+                <li><span class="vineta two"></span><span class="price">Oportunidades</span>  <span>para poner flyers en las bolsas de delegados
+</span></li>
+                <li><span class="vineta two"></span><span class="price">Oportunidades</span>  <span>para poner regalos en las bolsas de delegados
+</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="title">
+              <img src="images/gold-title.png" alt="GOLD $1,500usd" class="sponsor-title">
+            </div>
+            <div class="img-right">
+              <img src="images/sponsors_gold.png" alt="gold">
+            </div>
+            <div class="info_container">
+              <ul>
+                <li><span class="vineta three"></span><span class="price">Tu marca en el sitio web</span>  <span>de  DrupalCamp Mexico City</span></li>
+                <li><span class="vineta three"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
+                <li><span class="vineta three"></span><span>Social Media </span>  <span class="price">(2 menciones)</span></li>
+                <li><span class="vineta three"></span><span class="price">1 boleto</span>  <span>para la cena de negocios</span></li>
+                <li><span class="vineta three"></span><span class="price">Presencia en la fiesta</span></li>
+                <li><span class="vineta three"></span><span class="price">Oportunidades</span>  <span>dar una charla</span></li>
+                <li><span class="vineta three"></span><span class="price">Oportunidades</span>  <span>para poner flyers en las bolsas de delegados
+</span></li>
+                <li><span class="vineta three"></span><span class="price">Oportunidades</span>  <span>para poner regalos en las bolsas de delegados
+</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="title">
+              <img src="images/silver-title.png" alt="SILVER $650usd" class="sponsor-title">
+            </div>
+            <div class="img-right">
+              <img src="images/sponsors_silver.png" alt="silver">
+            </div>
+            <div class="info_container">
+              <ul>
+                <li><span class="vineta one"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
+                <li><span class="vineta one"></span><span>Social Media </span>  <span class="price">(1 menciones)</span></li>
+                <li><span class="vineta one"></span><span class="price">Presencia en la fiesta</span></li>
+                <li><span class="vineta one"></span><span class="price">Oportunidades</span>  <span>para poner flyers en las bolsas de delegados
+</span></li>
+                <li><span class="vineta one"></span><span class="price">Oportunidades</span>  <span>para poner regalos en las bolsas de delegados
+</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="title">
+              <img src="images/personal-title.png" alt="Personal $50usd" class="sponsor-title">
+            </div>
+            <div class="info_container">
+              <ul>
+                <li><span class="vineta one"></span><span class="price">Avatar</span> <span>en sección de patrocinadores personales.</span></li>
+                <li><span class="vineta one"></span><span class="price">Puntos de buen karma.</span>
+                <li><span class="vineta one"></span><span class="price">Incluye playera</span></li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    </div>
     </div>
 </body>
 </html>
