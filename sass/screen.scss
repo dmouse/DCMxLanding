@@ -43,9 +43,13 @@ MIXINGS
 
 @mixin breakpoint($point) {
   @if $point == not-mobile {
-     @media (min-width: 767px) { @content ; }
+     @media (min-width: 820px) { @content ; }
+  }
+  @if $point == mobile {
+     @media (max-width: 480px) { @content ; }
   }
 }
+
 
 
 /*------------------------
@@ -111,9 +115,57 @@ section {
   text-align: left;
   width: 90%;
 
+  &.intro{
+    .brand{
+      svg{
+        fill: #fff;
+      }
+      polyline{
+        stroke: #fff;
+      }
+    }
+    .rmm-toggled-title{
+      color: #fff;
+    }
+    .rmm-button{
+      span{
+        background: #fff;
+      }
+    }
+    .navigation{
+      li{
+        color: #fff;
+        border-color: #fff;
+        a{
+          color: #fff;
+        }
+        svg{
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .mobile-nav{
+    margin-top: 15px;
+    @include breakpoint(not-mobile){
+      display: none;
+    }
+  }
+
+  .rmm.minimal{
+    .rmm-toggled ul{
+        background-color: #333333;
+        margin-top: 16px !important;
+    }
+  }
+
   .brand{
     float: left;
-    margin-top: 20px;
+    position: absolute;
+    @include breakpoint(not-mobile){
+      top: 24px;
+    }
     svg{
       transition: $default-transition;
       width: 98px;
@@ -125,13 +177,27 @@ section {
   float: right;
   top: 26px;
   padding-top: 30px;
+  display: none;
+
+  @include breakpoint(not-mobile){
+    display: block;
+  }
   li{
     display: inline-block;
     padding: 6px;
     @include menu-typo;
     transition: $default-transition;
+    color: #767676;
 
     a{color: #767676;}
+
+    &.active{
+      @include menu-active;
+      a{
+        color: #000;
+      }
+    }
+    &.share{ color: #000;}
   }
   svg{
     width: 16px;
@@ -149,41 +215,11 @@ section {
 }
 
 
+
 /*------------------------
 SECCION 1
 --------------------------*/
-.viewing-page-1{
-  .brand{
-      svg{
-        fill: #fff;
-
-        polyline{
-          stroke: #fff;
-        }
-      }
-    }
-  .navigation{
-    li{
-      color: #fff;
-      a{
-        color: #fff;
-      }
-    }
-    svg{
-      width: 16px;
-      height: 16px;
-      fill: #fff;
-    }
-    .social{
-      border: 2px solid #fff;
-      border-radius: 4px;
-      margin-right: 3px;
-    }
-  }
-}
-.main section.page1 {
-      background: #000100;
-
+.section {
   .bat{
       text-align: left;
       padding-left: 40px;
@@ -198,6 +234,7 @@ SECCION 1
     .papel-picado{
       margin-top: 40px;
       img{
+        width: 70%;
         max-width: 405px;
       }
     }
@@ -208,6 +245,7 @@ SECCION 1
       }
       img{
         max-width: 685px;
+        width: 90%;
       }
     }
     .date{
@@ -216,26 +254,21 @@ SECCION 1
       padding-bottom: 14px;
       position: absolute;
       width: 100%;
+      font-size: 16px;
       bottom: 50px;
     }
-
 }
 
 /*------------------------
 SECCION 2
 --------------------------*/
-.viewing-page-2{
-  .navigation{
-    .tickets{
-      @include menu-active;
-    }
-  }
-}
-section.page2 {
-  margin-top: -25px;
+#page2{
+   margin-top: -25px;
   transition: margin-top 1s linear;
   background: url("../images/back-p2.png") repeat-x scroll 0 0 #e4e4e4; 
-
+  .section-back{
+    margin-top: 64px;
+  }
   .page_container{
     @include breakpoint(not-mobile){
       top: 230px;
@@ -245,6 +278,9 @@ section.page2 {
   .img-right{
     img{
         max-width: 200px;
+        @include breakpoint(mobile){
+          max-width: 120px;
+        }
       }
     @include breakpoint(not-mobile){
       @include span(4 at 1 of 12);
@@ -283,6 +319,13 @@ section.page2 {
     }
     li{
       padding: 10px 0;
+      font-size: 14px;
+      @include breakpoint(not-mobile){
+        font-size: 16px;
+      }
+      @include breakpoint(mobile){
+        font-size: 12px;
+      }
       .price{
         font-weight: 900;
         padding-left: 6px;
@@ -291,10 +334,14 @@ section.page2 {
   }
   .footer-info{
     clear: both;
-    position: absolute;
     width: 100%;
-    bottom: 40px;
     color:#3d3d3d;
+    margin-top: 20px;
+    @include breakpoint(not-mobile){
+      position: absolute;
+      bottom: 40px;
+      margin-top: 0px;
+    }
     img{
       max-width: 38px;
       height: auto;
@@ -303,17 +350,26 @@ section.page2 {
       font-weight: 900;
       background: url("../images/line-pattern-gray.png") no-repeat scroll center bottom transparent;
       padding-bottom: 14px;
+      font-size: 14px;
+      @include breakpoint(mobile){
+        font-size: 12px;
+      }
     }
     .direction{
       font-weight: 700;
       font-size: 14px;
       padding: 10px 20px;
+      @include breakpoint(mobile){
+        font-size: 12px;
+      }
     }
   }
+ }
 
-} 
-section.page2.section.active{
-    margin-top: -0%;
+.section.active{
+    &#page2{
+      margin-top: -0%;
+    }
   }
 
 
@@ -328,15 +384,92 @@ SECCION 3
   }
 }
 
-section.page3{
+#page3{
   .page_container{
-    width: 90%;
-    background-image: url("../images/squeres-patern.png"), url("../images/squeres-patern.png") ;
-    background-repeat: repeat-x;
-    background-position: 0 bottom, 0 top;
+    width: 80%;
+    margin: auto;
+    @include breakpoint(not-mobile){
+      top: 230px;
+    }
+  }
+  .title{
+    text-align: center;
+    margin-bottom: 30px;
+    @include breakpoint(not-mobile){
+      text-align: left;
+      margin-top: 20px;
+    }
+     @include breakpoint(mobile){
+      margin: 80px auto 8px;
+    }
+  }
+  img.sponsor-title{
+    max-width: 416px;
+  }
+  .img-right{
+    img{
+        @include breakpoint(mobile){
+         display: none;
+        }
+        max-width: 314px;
+      }
+    @include breakpoint(not-mobile){
+      @include span(4 at 1 of 12);
+      display: table-cell;
+      img{
+        max-width: 298px;
+
+      }
+    }
+  }
+  .info_container{
+    text-align: left;
+    @include breakpoint(not-mobile){
+      @include span(8 at 1 of 12);
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .vineta{
+      background: url("../images/vinetas.png") no-repeat scroll 0 0 transparent;
+      padding-left: 20px;
+
+      &.two{
+        background-position: 0 -28px;
+      }
+      &.three{
+        background-position: 0 -55px;
+      }
+    }
+    ul{
+      padding: 20px 0 20px 30px;
+      background-image: url("../images/squeres-patern.png"), url("../images/squeres-patern.png") ;
+      background-repeat: repeat-x;
+      background-position: 0 bottom, 0 top;
+      @include breakpoint(not-mobile){
+        padding: 30px 0 30px 30px;
+      }
+      @include breakpoint(mobile){
+        padding-left: 0;
+      }
+    }
+    li{
+      padding: 10px 0;
+      @include breakpoint(mobile){
+        font-size: 12px;
+      }
+      .price{
+        font-weight: 900;
+        padding-left: 6px;
+      }
+    }
+  }
+  .fp-controlArrow.fp-next{
+    border-width: 38.5px 0 38.5px 12px;
+  }
+  .fp-controlArrow.fp-prev{
+    border-width: 38.5px 12px 38.5px 0;
   }
 }
-
 
  /* CSS ya existentes */
     
@@ -346,6 +479,7 @@ section.page3{
       left: 0;
       text-align: center;
       display: block;
+      z-index: 1;
       width: 100%;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -358,75 +492,4 @@ section.page3{
       -o-transition: all 500ms ease-in-out;
       transition: all 500ms ease-in-out;
     }
-
-    header {
-      position: relative;
-      z-index: 10;
-    }
-    .main section  {
-      overflow: hidden;
-    }
     
-    .main section .page_container .btns {
-      clear: both;
-      float: left;
-      text-align: center;
-      width: 435px;
-    }
-
-    
-    body.disabled-onepage-scroll .onepage-wrapper  section {
-      min-height: 100%;
-      height: auto;
-    }
-    
-    body.disabled-onepage-scroll .main section .page_container, body.disabled-onepage-scroll .main section.page3 .page_container  {
-      padding: 20px;
-      margin-top: 150px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-    
-    body.disabled-onepage-scroll  section .page_container h1{
-      text-align: center;
-      font-size: 50px;
-    }
-    body.disabled-onepage-scroll section .page_container h2, body.disabled-onepage-scroll section .page_container .credit, body.disabled-onepage-scroll section .page_container .btns{
-      text-align: center;
-      width: 100%;
-    }
-    
-    body.disabled-onepage-scroll .main section.page1 > img {
-      position: absolute;
-      width: 80%;
-      left: 10%;
-    }
-    
-    body.disabled-onepage-scroll .main section > img {
-      position: relative;
-      max-width: 80%;
-      bottom: 0;
-    }
-    body.disabled-onepage-scroll code {
-      width: 95%;
-      margin: 0 auto 25px;
-      float: none;
-      overflow: hidden;
-    }
-    
-    body.disabled-onepage-scroll .main section.page3 .page_container {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      right: 0;
-    } 
-
-    
-
-
-    section.page5{
-      background: #fff;
-    }
-
-    /*------ section 1 -------*/
