@@ -211,17 +211,27 @@ span.plus {
 .navigation li.share {
   color: #000;
 }
+.navigation li.facebook {
+  padding: 0;
+}
 .navigation li.facebook:hover {
   background: #3b5998;
 }
 .navigation li.facebook a {
   opacity: 1 !important;
+  padding: 6px;
+  display: block;
+}
+.navigation li.twitter {
+  padding: 0;
 }
 .navigation li.twitter:hover {
   background: #00aced;
 }
 .navigation li.twitter a {
   opacity: 1 !important;
+  padding: 6px;
+  display: block;
 }
 .navigation svg {
   width: 16px;
@@ -467,7 +477,7 @@ SECCION 2
 }
 #page2 .footer-info .direction {
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 4px 10px;
 }
 @media (min-width: 480px) {
   #page2 .footer-info .direction {
