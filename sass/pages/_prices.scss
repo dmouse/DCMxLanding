@@ -13,6 +13,10 @@ SECCION 2
   }
   .img-right{
     img{
+        display: none;
+        @include breakpoint(tablet){
+          display: block;
+        }
         max-width: 120px;
       }
     @include breakpoint(desktop){
