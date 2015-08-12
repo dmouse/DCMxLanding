@@ -359,7 +359,13 @@ SECCION 2
   margin-top: 64px;
 }
 #page2 .img-right img {
+  display: none;
   max-width: 120px;
+}
+@media (min-width: 768px) {
+  #page2 .img-right img {
+    display: block;
+  }
 }
 @media (min-width: 820px) {
   #page2 .img-right {
