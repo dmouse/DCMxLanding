@@ -1,0 +1,139 @@
+/*------------------------
+ MENU
+--------------------------*/
+#header{
+  margin: auto;
+  max-width: 960px;
+  text-align: left;
+  width: 90%;
+
+  &.intro{
+    .brand{
+      svg{
+        fill: #fff;
+      }
+      polyline{
+        stroke: #fff;
+      }
+    }
+    .rmm-toggled-title{
+      color: #fff;
+    }
+    .rmm-button{
+      span{
+        background: #fff;
+      }
+    }
+    .navigation{
+      li{
+        color: #fff;
+        border-color: #fff;
+        a{
+          color: #fff;
+          opacity: 0.7;
+          &:hover{
+            opacity: 1;
+          }
+        }
+        svg{
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .mobile-nav{
+    margin-top: 15px;
+    @include breakpoint(desktop){
+      display: none;
+    }
+  }
+
+  .rmm.minimal{
+    .rmm-toggled ul{
+        background-color: #333333;
+        margin-top: 16px !important;
+    }
+  }
+
+  .brand{
+    float: left;
+    position: absolute;
+    @include breakpoint(desktop){
+      top: 24px;
+    }
+    svg{
+      transition: $default-transition;
+      width: 98px;
+      height: 46px;
+    }
+  }
+ }
+.navigation{
+  float: right;
+  top: 26px;
+  padding-top: 30px;
+  display: none;
+
+  @include breakpoint(desktop){
+    display: block;
+  }
+  li{
+    display: inline-block;
+    padding: 6px;
+    @include menu-typo;
+    transition: $default-transition;
+    color: #767676;
+
+    a{
+      color: #767676;
+      &:hover{
+        color: #000;
+      }
+    }
+
+    &.active{
+      @include menu-active;
+      a{
+        color: #000;
+      }
+    }
+    &.share{ color: #000;}
+    &.facebook{
+          &:hover{
+            background: #3b5998;
+          }
+          a{
+            opacity: 1 !important;
+          }
+        }
+
+        &.twitter{
+          &:hover{
+            background: #00aced;
+          }
+          a{
+            opacity: 1 !important;
+          }
+        }
+  }
+  svg{
+    width: 16px;
+    height: 16px;
+    fill: #000;
+    transition: $default-transition;
+    transition-duration: 0.5s;
+
+  }
+  .social{
+    border: 2px solid #000;
+    border-radius: 4px;
+    margin-right: 3px;
+    transition: $default-transition;
+    &:hover{
+      svg{
+        fill: #fff;
+      }
+    }
+  }
+}

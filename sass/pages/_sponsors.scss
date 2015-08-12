@@ -1,0 +1,51 @@
+/*------------------------
+SECCION 1 HOME
+--------------------------*/
+/*------------------------
+SECCION 3
+--------------------------*/
+.viewing-page-3{
+  .navigation{
+    .sponsors{
+      @include menu-active;
+    }
+  }
+}
+
+#page3{
+  .page_container{
+    padding-top: 100px;
+    @include breakpoint(tablet){
+      padding-top: 0;
+    }
+    .package{
+      @include breakpoint(mobile){
+         margin-bottom: 20px;
+        @include span(6 of 12 at 1);
+      }
+      @include breakpoint(desktop){
+        background: url("../images/shadow.png") no-repeat scroll center bottom transparent;
+        padding-bottom: 34px;
+        @include span(3 of 12 at 1);
+        display: inline-block;
+        float: none;
+        margin: 0 0 50px 0;
+      }
+      img{
+        max-width: 150px;
+      }
+    }
+    .message{
+      clear: both;
+      font-weight: bold;
+      border: 2px dotted #bdb9b6;
+      padding: 10px;
+      background-color: #dfdcda;
+      a{
+        color: #8811d4;
+      }
+    }
+  }
+
+}
+
