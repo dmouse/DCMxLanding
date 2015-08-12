@@ -100,20 +100,26 @@
     }
     &.share{ color: #000;}
     &.facebook{
+          padding: 0;
           &:hover{
             background: #3b5998;
           }
           a{
             opacity: 1 !important;
+            padding: 6px;
+            display: block;
           }
         }
 
         &.twitter{
+          padding: 0;
           &:hover{
             background: #00aced;
           }
           a{
             opacity: 1 !important;
+            padding: 6px;
+            display: block;
           }
         }
   }
