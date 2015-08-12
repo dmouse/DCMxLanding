@@ -67,6 +67,12 @@
       top: 24px;
     }
     svg{
+      width: 60px;
+        height: 66px;
+        @include breakpoint(tablet){
+        width: 100px;
+        height: 111px;
+      }
       path{
         transition: $default-transition;
         fill: #000;

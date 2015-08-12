@@ -170,6 +170,16 @@ span.plus {
     top: 24px;
   }
 }
+#header .brand svg {
+  width: 60px;
+  height: 66px;
+}
+@media (min-width: 768px) {
+  #header .brand svg {
+    width: 100px;
+    height: 111px;
+  }
+}
 #header .brand svg path {
   transition: all 0.2s linear;
   fill: #000;
@@ -271,6 +281,7 @@ SECCION 1 HOME
 }
 #page1 .bat img {
   max-width: 82px;
+  position: absolute;
 }
 #page1 .papel-picado {
   margin-top: 40px;
