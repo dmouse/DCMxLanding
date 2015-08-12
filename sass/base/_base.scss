@@ -1,0 +1,79 @@
+/*------------------------
+CSS BASE
+--------------------------*/
+html {
+  height: 100%;
+}
+
+body {
+      background-color: $body-bg-color;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      font-family: $body-font;
+      font-size: 12px;
+      @include breakpoint(tablet){
+        font-size: 14px;
+      }
+    }
+ 
+ a {
+      text-decoration: none;
+      transition: $default-transition;
+    }
+
+p{
+    text-align: left;
+    color: #6f6f6f;
+}
+img{
+  width: 100%;
+}
+
+.section {
+  font-size: 12px;
+  @include breakpoint(tablet){
+    font-size: 14px;
+  }
+  .page_container {
+      margin: 0 auto;
+      max-width: 960px;
+      position: relative;
+      width: 94%;
+      @include breakpoint(tablet){
+        width: 80%;
+      }
+  }
+}
+.footer-info{
+  position: absolute;
+  bottom: 0;
+  margin-top: 0px;
+  left: 0;
+  right: 0;
+  margin: auto;
+ 
+  img{
+    max-width: 38px;
+    height: auto;
+  }
+}
+.accordion-toggle {cursor: pointer;}
+.accordion-content {display: none;}
+.accordion-content.default {display: block;}
+.advice{
+  font-weight: 900;
+  font-size: 18px;
+  padding: 10px;
+  text-align: right;
+}
+span.plus {
+    float: right;
+    color: #767676;
+    font-size: 20px;
+    font-family: arial;
+    line-height: 16px;
+}

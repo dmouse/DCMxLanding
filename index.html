@@ -15,6 +15,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
+  <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
   <script type="text/javascript" src="js/jquery.fullPage.js"></script>
 
   <link rel="stylesheet" href="css/responsivemobilemenu.css" type="text/css"/>
@@ -32,6 +33,8 @@
         menu: '#menu',
         loopTop: true,
         loopBottom: true,
+        scrollOverflow: true,
+
 
         afterLoad: function(anchorLink, index){
           //using index
@@ -93,10 +96,7 @@
                 <a href="#3rdPage">Sponsors Packages</a>
               </li>
               <li data-menuanchor="4rdPage">
-                <a href="#4rdPage">Speakers</a>
-              </li>
-              <li data-menuanchor="5thPage">
-                <a href="#5thPage">Contact</a>
+                <a href="#">Contact</a>
               </li>
             </ul>
           </div>
@@ -110,13 +110,10 @@
               <a href="#3rdPage">Sponsors Packages</a>
             </li>
             <li data-menuanchor="4rdPage">
-              <a href="#4rdPage">Speakers</a>
+              <a href="#4rdPage">Contact</a>
             </li>
-            <li data-menuanchor="5thPage">
-              <a href="#5thPage">Contact</a>
-            </li>
-            <li class="share">Share</li>
-            <li class="facebok social">
+            <li class="share">Share:</li>
+            <li class="facebook social">
               <a href="https://www.facebook.com/DrupalCampMx">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                    width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -152,8 +149,8 @@
         SECCION 1
       ********************************-->
 
-      <div class="section" name="home">
-        <div class="page_container page1">
+      <div class="section" id="page1" name="home">
+      <div class="page_container">
           <div class="bat">
             <img src="images/fig1.png" align="murcielago">
           </div>
@@ -161,57 +158,53 @@
             <img src="images/papel.png" align="papel picdo">
           </div>
           <div class="calaverita">
+            <div class="flama"></div>
             <img src="images/calaverita.png" alt="calaverita">
           </div>
-        </div>
-        <div class="date">del 5 al 7 de Noviembre 2015</div>
       </div>
+      <div class="date">28  y 29 de octubre 2015</div>
+    </div>
 
       <!--****************************
         SECCION 2
       ********************************-->
-
       <div class="section" id="page2" name="tickets">
-        <div class="section-back">
-          <div class="page_container">
-            <div class="img-right">
-              <img src="images/ticket.png" alt="tickets">
-            </div>
+        <div class="page_container">
+          <div class="img-right">
+            <img src="images/ticket.png" alt="tickets">
+          </div>
             <div class="info_container">
-              <ul>
-                <li>
-                  <span class="vineta one"></span><span class="price">FREE -</span>
-                  <span>
-                    Estudiantes y académicos con credencial vigente.Para apartar
-                    tu boleto y asegurar tu lugar es necesario pagar $200 pesos y mostrar
-                    tu credencial antes del evento. En el evento se te reembolsará tu dinero
-                    o bien la podrás canjear por la playera oficial (previo apartado al apartar
-                    tu lugar).
-                  </span>
-                </li>
-                <li><span class="vineta two"></span>
-                  <span class="price">500 MXN  -</span>
-                  <span>Publico en general, incluye playera oficial del evento.</span>
-                </li>
-                <li><span class="vineta three"></span>
-                  <span class="price">1000 MXN  -</span>
-                  <span>Entrada al evento, playera del evento y paquete de comida por los tres días.</span>
-                </li>
-                <li><span class="vineta"></span>
-                  <span class="price">Solo 150 boletos disponibles.</span>
-                </li>
-              </ul>
-            </div>
-            <div class="footer-info">
-              <div class="info-container">
-                <img src="images/location-icon.png" alt="location">
-                <div class="place">Torre de Ingeniería UNAM</div>
-                <div class="direction">Av. Universidad 3000 Circuito Exterior S/N Delegación Coyoacán, C.P. 04510. Ciudad Universitaria, D.F.</div>
+              <div id="accordion">
+                <h4 class="accordion-toggle price"><span class="vineta one"></span> FREE -<span class="plus">+</span></h4>
+                <div class="accordion-content">
+                  <p>Estudiantes y académicos con credencial vigente. Para apartar
+                    tu boleto y asegurar tu lugar es necesario pagar <b>$200 pesos y mostrar
+                    tu credencial antes del evento</b>. En el evento <b>se te reembolsará tu dinero
+                    o bien la podrás canjear por la playera oficial</b> (previo apartado al apartar
+                    tu lugar).</p>
+                </div>
+                <h4 class="accordion-toggle price"><span class="vineta two"></span> Genral - 500 MXN<span class="plus">+</span></h4>
+                <div class="accordion-content">
+                  <p>Publico en general, <b>incluye playera oficial del evento.</b></p>
+                </div>
+                <h4 class="accordion-toggle price"><span class="vineta three"></span>All inclusive - 1000 MXN<span class="plus">+</span></h4>
+                <div class="accordion-content">
+                  <p>El costo del ticket ($1000) incluye <b>entrada al evento, playera del evento y paquete de comida por los tres días.</b></p>
+                </div>
               </div>
-            </div>
+              <div class="advice">
+                Solo 150 boletos disponibles.
+              </div>
           </div>
         </div>
-      </div>
+        <div class="footer-info">
+          <div class="info-container">
+          <img src="images/location-icon.png" alt="location">
+          <div class="place">Torre de Ingeniría UNAM</div>
+          <div class="direction">Av. Universidad 3000 Circuito Exterior S/N Delegación Coyoacán, C.P. 04510. Ciudad Universitaria, D.F.</div>
+          </div>
+        </div>
+    </div>
 
       <!--****************************
         SECCION 3
@@ -219,127 +212,55 @@
 
       <div class="section" id="page3" name="Sponsors Packages">
         <div class="page_container">
-
-          <div class="slide">
-            <div class="title">
-              <img src="images/diamon-title.png" alt="DIAMON $3,000usd" class="sponsor-title">
+          <div class="packages">
+            <div class="package diamond">
+              <img src="images/sponsors_diamon.png" alt="Diamond">
             </div>
-            <div class="img-right">
-              <img src="images/sponsors_diamon.png" alt="diamon">
+            <div class="package platinum">
+              <img src="images/sponsors_platinum.png" alt="Platinum">
             </div>
-            <div class="info_container">
-              <ul>
-                <li><span class="vineta one"></span><span class="price">Tu marca en el sitio web</span>  <span>de  DrupalCamp Mexico City</span></li>
-                <li><span class="vineta one"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
-                <li><span class="vineta one"></span><span class="price">Oportunidad de nombrar uno de los</span>  <span>espacios con tu marca</span></li>
-                <li><span class="vineta one"></span><span>Social Media </span>  <span class="price">(5 menciones)</span></li>
-                <li><span class="vineta one"></span><span class="price">2 boletos</span>  <span>para la cena de negocios</span></li>
-                <li><span class="vineta one"></span><span class="price">Presencia en la fiesta</span></li>
-                <li><span class="vineta one"></span><span class="price">Tu logo en la pantalla</span>  <span>de presentación</span></li>
-                <li><span class="vineta one"></span><span class="price">Oportunidades para</span>  <span>dar una charla</span></li>
-                <li><span class="vineta one"></span><span class="price">Logo prominente en los</span>  <span>anuncios de la sede</span></li>
-              </ul>
+            <div class="package gold">
+              <img src="images/sponsors_gold.png" alt="Gold">
+            </div>
+            <div class="package in-kind">
+              <img src="images/sponsors_kind.png" alt="in Kind">
             </div>
           </div>
-          <div class="slide">
-            <div class="title">
-              <img src="images/platinum-title.png" alt="PLATINUM $2,500usd" class="sponsor-title">
-            </div>
-            <div class="img-right">
-              <img src="images/sponsors_platinum.png" alt="platinum">
-            </div>
-            <div class="info_container">
-              <ul>
-                <li><span class="vineta two"></span><span class="price">Tu marca en el sitio web</span>  <span>de  DrupalCamp Mexico City</span></li>
-                <li><span class="vineta two"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
-                <li><span class="vineta two"></span><span>Social Media </span>  <span class="price">(3 menciones)</span></li>
-                <li><span class="vineta two"></span><span class="price">1 boleto</span>  <span>para la cena de negocios</span></li>
-                <li><span class="vineta two"></span><span class="price">Presencia en la fiesta</span></li>
-                <li><span class="vineta two"></span><span class="price">Tu logo en la pantalla</span>  <span>de presentación</span></li>
-                <li><span class="vineta two"></span><span class="price">Oportunidades</span>  <span>dar una charla</span></li>
-                <li><span class="vineta two"></span><span class="price">Oportunidades</span>  <span>para poner flyers en las bolsas de delegados
-</span></li>
-                <li><span class="vineta two"></span><span class="price">Oportunidades</span>  <span>para poner regalos en las bolsas de delegados
-</span></li>
-              </ul>
-            </div>
+          <div class="message">
+            Mayor iformación respecto a los beneficios de cada patrocionio en el sigguiente link: <a href="https://docs.google.com/document/d/1hXcv-PJv_7nGMRviNtVK9WroflE5E4XSDteLjUBKw8o/edit"> Sponsors Information</a>
           </div>
-          <div class="slide">
-            <div class="title">
-              <img src="images/gold-title.png" alt="GOLD $1,500usd" class="sponsor-title">
-            </div>
-            <div class="img-right">
-              <img src="images/sponsors_gold.png" alt="gold">
-            </div>
-            <div class="info_container">
-              <ul>
-                <li><span class="vineta three"></span><span class="price">Tu marca en el sitio web</span>  <span>de  DrupalCamp Mexico City</span></li>
-                <li><span class="vineta three"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
-                <li><span class="vineta three"></span><span>Social Media </span>  <span class="price">(2 menciones)</span></li>
-                <li><span class="vineta three"></span><span class="price">1 boleto</span>  <span>para la cena de negocios</span></li>
-                <li><span class="vineta three"></span><span class="price">Presencia en la fiesta</span></li>
-                <li><span class="vineta three"></span><span class="price">Oportunidades</span>  <span>dar una charla</span></li>
-                <li><span class="vineta three"></span><span class="price">Oportunidades</span>  <span>para poner flyers en las bolsas de delegados
-</span></li>
-                <li><span class="vineta three"></span><span class="price">Oportunidades</span>  <span>para poner regalos en las bolsas de delegados
-</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="title">
-              <img src="images/silver-title.png" alt="SILVER $650usd" class="sponsor-title">
-            </div>
-            <div class="img-right">
-              <img src="images/sponsors_silver.png" alt="silver">
-            </div>
-            <div class="info_container">
-              <ul>
-                <li><span class="vineta one"></span><span class="price">Logo y link en </span> <span>la página de patrocinadores</span></li>
-                <li><span class="vineta one"></span><span>Social Media </span>  <span class="price">(1 menciones)</span></li>
-                <li><span class="vineta one"></span><span class="price">Presencia en la fiesta</span></li>
-                <li><span class="vineta one"></span><span class="price">Oportunidades</span>  <span>para poner flyers en las bolsas de delegados
-</span></li>
-                <li><span class="vineta one"></span><span class="price">Oportunidades</span>  <span>para poner regalos en las bolsas de delegados
-</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="title">
-              <img src="images/personal-title.png" alt="Personal $50usd" class="sponsor-title">
-            </div>
-            <div class="info_container">
-              <ul>
-                <li><span class="vineta one"></span><span class="price">Avatar</span> <span>en sección de patrocinadores personales.</span></li>
-                <li><span class="vineta one"></span><span class="price">Puntos de buen karma.</span>
-                <li><span class="vineta one"></span><span class="price">Incluye playera</span></li>
-              </ul>
-            </div>
-
-          </div>
-
         </div>
       </div>
+      <!--****************************
+        SECCION 4
+      ********************************-->
 
-      <div class="section" id="page4" name="Drupal Camp Contact">
+      <!--div class="section" id="page4" name="Drupal Camp Contact">
 
-      </div>
+      </div -->
+      <!--****************************
+        SECCION 5
+      ********************************-->
 
       <div class="section" id="page5" name="Drupal Camp Contact">
-        <div class="section-back">
-            <div class="footer-info">
-              <div class="info-container">
-                <iframe src="https://docs.google.com/forms/d/1wummLMoCibM59_dZFgVyvJW0ojbyy76OE6DqubYieUA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-              </div>
-            </div>
-          </div>
+        <div class="page_container">
+          <iframe src="https://docs.google.com/forms/d/1wummLMoCibM59_dZFgVyvJW0ojbyy76OE6DqubYieUA/viewform?embedded=true" width="100%" height="710" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
         </div>
       </div>
+    </div>
+    <!-- JS -->
+    <script type="text/javascript">
+      $(document).ready(function($) {
+        $('#accordion').find('.accordion-toggle').click(function(){
 
-    </div>
-    </div>
-    </div>
+          //Expand or collapse this panel
+          $(this).next().slideToggle('fast');
+
+          //Hide the other panels
+          $(".accordion-content").not($(this).next()).slideUp('fast');
+
+        });
+      });
+    </script>
 </body>
 </html>

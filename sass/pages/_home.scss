@@ -1,0 +1,90 @@
+/*------------------------
+SECCION 1 HOME
+--------------------------*/
+#page1{
+  .page_container{
+    width: 100%;
+  }
+  .bat{
+      text-align: left;
+      padding-left: 40px;
+      display: none;
+      @include breakpoint(desktop){
+        display: block;
+      }
+      img{
+        max-width: 82px;
+      }
+    }
+    .papel-picado{
+      margin-top: 40px;
+      img{
+        width: 300px;
+        height: auto;
+        @include breakpoint(mobile){
+          width: 370px;
+        }
+        @include breakpoint(tablet){
+          width: 405px;
+        }
+      }
+    }
+    .flama{
+      width: 7px;
+      height: 28px;
+      background: url("../images/flama-sprite.png") no-repeat scroll 0 0 transparent;
+      position: absolute;
+      -webkit-animation: 1s steps(16, end) 0s normal none infinite flama;
+      animation: 1s steps(16, end) 0s normal none infinite flama;
+      margin: 44px 0 0 65px;
+      @include breakpoint(mobile){
+          margin-top: 81px;
+          margin-left: 100px;
+        }
+      @include breakpoint(tablet){
+          margin-top: 127px;
+          margin-left: 144px;
+        }
+    }
+    .calaverita{
+      max-width: 685px;
+      margin: -50px auto 0;
+      width: 320px;
+      @include breakpoint(mobile){
+        width: 480px;
+        margin-top: -110px;
+      }
+      @include breakpoint(tablet){
+          width: 685px;
+      }
+      img{
+        height: auto;
+      }
+    }
+    .date{
+      color: #fff;
+      background: url("../images/line-pattern-gray.png") no-repeat scroll center bottom transparent;
+      padding-bottom: 14px;
+      position: absolute;
+      width: 100%;
+      font-size: 16px;
+      bottom: 50px;
+    }
+}
+
+@-webkit-keyframes flama {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -112px center;
+  }
+}
+@-moz-keyframes flama {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: -112px center;
+  }
+}

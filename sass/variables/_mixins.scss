@@ -1,0 +1,30 @@
+/*------------------------
+MIXINGS
+--------------------------*/
+@mixin menu-typo{
+  font-family: $menu-font;
+  color: $menu-color;
+  font-size: $menu-size; 
+}
+
+@mixin menu-active{
+    background: url("../images/active-pattern.png") repeat-x scroll 0 bottom transparent;
+    padding-bottom: 10px;
+    a{ color: #000;}
+}
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+     @media (min-width: 820px) { @content ; }
+  }
+  @if $point == tablet{
+     @media (min-width: 768px) { @content ; }
+  }
+  @if $point == mobile {
+     @media (min-width: 480px) { @content ; }
+  }
+}
+
+
+
+
