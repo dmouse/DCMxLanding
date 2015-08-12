@@ -9,8 +9,11 @@
 
   &.intro{
     .brand{
+      margin-top: -15px;
       svg{
-        fill: #fff;
+        path{
+          fill: #fff;
+        }
       }
       polyline{
         stroke: #fff;
@@ -57,15 +60,17 @@
   }
 
   .brand{
+    transition: $default-transition;
     float: left;
     position: absolute;
     @include breakpoint(desktop){
       top: 24px;
     }
     svg{
-      transition: $default-transition;
-      width: 98px;
-      height: 46px;
+      path{
+        transition: $default-transition;
+        fill: #000;
+      }
     }
   }
  }

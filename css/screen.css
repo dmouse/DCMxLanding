@@ -119,7 +119,10 @@ span.plus {
   text-align: left;
   width: 90%;
 }
-#header.intro .brand svg {
+#header.intro .brand {
+  margin-top: -15px;
+}
+#header.intro .brand svg path {
   fill: #fff;
 }
 #header.intro .brand polyline {
@@ -158,6 +161,7 @@ span.plus {
   margin-top: 16px !important;
 }
 #header .brand {
+  transition: all 0.2s linear;
   float: left;
   position: absolute;
 }
@@ -166,10 +170,9 @@ span.plus {
     top: 24px;
   }
 }
-#header .brand svg {
+#header .brand svg path {
   transition: all 0.2s linear;
-  width: 98px;
-  height: 46px;
+  fill: #000;
 }
 
 .navigation {
